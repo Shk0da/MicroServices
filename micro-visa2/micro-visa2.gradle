@@ -1,0 +1,5 @@
+description 'Micro Visa2'
+
+dependencies {
+    compile project(':micro-main')
+}

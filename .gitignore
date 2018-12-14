@@ -1,0 +1,39 @@
+.gradle
+build/
+builds/
+target/
+out/
+!.mvn/wrapper/maven-wrapper.jar
+*.war
+*.jar
+*.log
+*.log.zip
+*.tmp
+*.0
+*.0.lck
+log/
+.vertx
+
+### STS ###
+bin/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

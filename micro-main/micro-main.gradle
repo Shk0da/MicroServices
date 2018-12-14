@@ -1,0 +1,14 @@
+description 'Micro main'
+
+bootJar {enabled = false}
+
+dependencies {
+    compile project(':micro-cloudconfig')
+    compile('org.springframework.kafka:spring-kafka')
+    compile('com.hazelcast:hazelcast')
+    compile('com.hazelcast:hazelcast-spring')
+    compile('com.hazelcast:hazelcast-client')
+    compile('io.vertx:vertx-core:3.5.3')
+    compile('io.vertx:vertx-hazelcast:3.5.3')
+    compile('io.vertx:vertx-hazelcast:3.5.3')
+}

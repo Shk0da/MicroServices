@@ -1,0 +1,5 @@
+description 'Micro Limits'
+
+dependencies {
+	compile project(':micro-main')
+}

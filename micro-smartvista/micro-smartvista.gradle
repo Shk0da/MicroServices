@@ -1,0 +1,6 @@
+description 'Micro SmartVista'
+
+dependencies {
+    compile project(':micro-main')
+    compile('net.sf.j8583:j8583:1.12.0')
+}

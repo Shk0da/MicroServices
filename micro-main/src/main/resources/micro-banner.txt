@@ -1,0 +1,1 @@
+${AnsiColor.MAGENTA}application[${spring.application.name}], profile[${spring.profiles.active}], version[${info.project.version}]${AnsiColor.DEFAULT}

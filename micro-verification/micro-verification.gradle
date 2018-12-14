@@ -1,0 +1,5 @@
+description 'Micro Verification'
+
+dependencies {
+	compile project(':micro-main')
+}

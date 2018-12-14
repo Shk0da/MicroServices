@@ -1,0 +1,23 @@
+
+rootProject.name = 'micro-services'
+
+include ':micro-main'
+include ':micro-cloudconfig'
+include ':micro-visa2'
+include ':micro-cryptography'
+include ':micro-balance'
+include ':micro-fees'
+include ':micro-smartvista'
+include ':micro-limits'
+include ':micro-orchestrator'
+include ':micro-verification'
+include ':micro-notice'
+
+def setBuildFile(pr) {
+    pr.buildFileName = "${pr.name}.gradle"
+    pr.children.each {
+        setBuildFile(it)
+    }
+}
+
+setBuildFile(rootProject)

@@ -1,0 +1,5 @@
+description 'Micro Fees'
+
+dependencies {
+	compile project(':micro-main')
+}

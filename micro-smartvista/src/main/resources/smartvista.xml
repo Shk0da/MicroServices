@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE j8583-config PUBLIC "-//J8583//DTD CONFIG 1.0//EN" "j8583.dtd">
+<j8583-config>
+
+    <header type="1100">ISO015000050</header>
+    <header type="1110">ISO015000055</header>
+    <header type="1120">ISO015000050</header>
+    <header type="1130">ISO015000055</header>
+    <header type="1344">ISO015000050</header>
+    <header type="1354">ISO015000055</header>
+    <header type="1804">ISO015000015</header>
+    <header type="1814">ISO015000015</header>
+
+    <!-- NKPS request: Authorization Message -->
+    <parse type="1100">
+        <field num="2" type="LLVAR" length="19"/>
+        <field num="3" type="NUMERIC" length="6"/>
+        <field num="4" type="NUMERIC" length="12"/>
+        <field num="5" type="NUMERIC" length="12"/>
+        <field num="7" type="DATE10" length="10"/>
+        <field num="9" type="NUMERIC" length="8"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="12" type="DATE12" length="12"/>
+        <field num="14" type="DATE_EXP" length="4"/>
+        <field num="15" type="NUMERIC" length="6"/>
+        <field num="18" type="NUMERIC" length="4"/>
+        <field num="19" type="NUMERIC" length="3"/>
+        <field num="22" type="ALPHA" length="12"/>
+        <field num="32" type="LLVAR" length="11"/>
+        <field num="37" type="ALPHA" length="12"/>
+        <field num="43" type="ALPHA" length="40"/>
+        <field num="48" type="LLLVAR" length="999"/>
+        <field num="49" type="NUMERIC" length="3"/>
+        <field num="50" type="NUMERIC" length="3"/>
+        <field num="52" type="BINARY" length="4"/>
+        <field num="55" type="LLLBIN" length="255"/>
+    </parse>
+
+    <!-- NKPS response: Authorization Message -->
+    <parse type="1110">
+        <field num="2" type="LLVAR" length="19"/>
+        <field num="3" type="NUMERIC" length="6"/>
+        <field num="7" type="DATE10" length="10"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="12" type="DATE12" length="12"/>
+        <field num="14" type="DATE_EXP" length="4"/>
+        <field num="37" type="ALPHA" length="12"/>
+        <field num="38" type="ALPHA" length="6"/>
+        <field num="39" type="ALPHA" length="3"/>
+        <field num="48" type="LLLVAR" length="999"/>
+        <field num="55" type="LLLBIN" length="255"/>
+    </parse>
+
+    <!-- NKPS request: Authorization Advice Messages -->
+    <parse type="1120">
+        <field num="2" type="LLVAR"/>
+        <field num="3" type="NUMERIC" length="6"/>
+        <field num="4" type="NUMERIC" length="12"/>
+        <field num="5" type="NUMERIC" length="12"/>
+        <field num="7" type="DATE10"/>
+        <field num="9" type="NUMERIC" length="8"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="12" type="DATE12"/>
+        <field num="14" type="DATE_EXP"/>
+        <field num="15" type="NUMERIC" length="6"/>
+        <field num="18" type="NUMERIC" length="4"/>
+        <field num="19" type="NUMERIC" length="3"/>
+        <field num="22" type="ALPHA" length="12"/>
+        <field num="32" type="LLVAR"/>
+        <field num="37" type="ALPHA" length="12"/>
+        <field num="38" type="ALPHA" length="6"/>
+        <field num="39" type="ALPHA" length="3"/>
+        <field num="43" type="ALPHA" length="40"/>
+        <field num="48" type="LLLVAR"/>
+        <field num="49" type="NUMERIC" length="3"/>
+        <field num="50" type="NUMERIC" length="3"/>
+        <field num="55" type="LLLBIN"/>
+    </parse>
+
+    <!-- NKPS response: Authorization Advice Acknowledgement -->
+    <parse type="1130">
+        <field num="2" type="LLVAR"/>
+        <field num="3" type="NUMERIC" length="6"/>
+        <field num="7" type="DATE10"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="12" type="DATE12"/>
+        <field num="14" type="DATE_EXP"/>
+        <field num="37" type="ALPHA" length="12"/>
+        <field num="39" type="ALPHA" length="3"/>
+        <field num="48" type="LLLVAR"/>
+    </parse>
+
+    <!-- NKPS request: Card Management Notification -->
+    <parse type="1344">
+        <field num="2" type="LLVAR"/>
+        <field num="3" type="NUMERIC" length="6"/>
+        <field num="7" type="DATE10"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="12" type="DATE12"/>
+        <field num="14" type="DATE_EXP"/>
+        <field num="37" type="ALPHA" length="12"/>
+        <field num="48" type="LLLVAR"/>
+    </parse>
+
+    <!-- NKPS response: Card Management Acknowledgement -->
+    <parse type="1354">
+        <field num="2" type="LLVAR"/>
+        <field num="3" type="NUMERIC" length="6"/>
+        <field num="7" type="DATE10"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="12" type="DATE12"/>
+        <field num="14" type="DATE_EXP"/>
+        <field num="37" type="ALPHA" length="12"/>
+        <field num="38" type="ALPHA" length="6"/>
+        <field num="39" type="ALPHA" length="3"/>
+        <field num="48" type="LLLVAR"/>
+    </parse>
+
+    <!-- NKPS request: Network Management (echo test) -->
+    <parse type="1804">
+        <field num="7" type="DATE10"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="70" type="NUMERIC" length="3"/>
+    </parse>
+
+    <!-- NKPS response: Network Management (echo test) -->
+    <parse type="1814">
+        <field num="7" type="DATE10"/>
+        <field num="11" type="NUMERIC" length="6"/>
+        <field num="39" type="ALPHA" length="2"/>
+        <field num="70" type="NUMERIC" length="3"/>
+    </parse>
+
+</j8583-config>

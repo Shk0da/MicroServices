@@ -1,0 +1,68 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'project-report'
+apply plugin: 'build-dashboard'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.github.shk0da'
+version = 'v1'
+description 'Micro Cloud Config Client'
+sourceCompatibility = 1.8
+
+bootJar {enabled = false}
+
+repositories {
+    flatDir { dirs 'lib' }
+    mavenCentral()
+}
+
+dependencies {
+    // core cloud
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-ribbon')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+
+    // metrics
+    compile('io.micrometer:micrometer-core')
+    compile('io.dropwizard.metrics:metrics-core')
+    compile('io.dropwizard.metrics:metrics-annotation')
+    compile('io.dropwizard.metrics:metrics-json')
+    compile('io.dropwizard.metrics:metrics-jvm')
+    compile('io.dropwizard.metrics:metrics-servlet')
+    compile('io.dropwizard.metrics:metrics-servlets')
+    compile('org.springframework.retry:spring-retry')
+    compile('com.ryantenney.metrics:metrics-spring:3.1.3')
+    compile('org.springframework.plugin:spring-plugin-core')
+
+    // logs
+    compile('net.logstash.logback:logstash-logback-encoder:5.1')
+    
+    runtime('org.springframework.boot:spring-boot-devtools')
+}
+
+ext {
+    springCloudVersion = 'Finchley.RELEASE'
+}
+
+buildscript {
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+    }
+    repositories {
+        flatDir { dirs 'lib' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}

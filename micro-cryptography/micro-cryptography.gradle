@@ -1,0 +1,5 @@
+description 'Micro Cryptography'
+
+dependencies {
+	compile project(':micro-main')
+}

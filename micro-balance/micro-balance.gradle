@@ -1,0 +1,5 @@
+description 'Micro Balance'
+
+dependencies {
+	compile project(':micro-main')
+}
